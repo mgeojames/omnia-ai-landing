@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omnia – The AI that understands your rhythm</title>
+  <meta name="description" content="Omnia interprets your physiological rhythm through AI – HRV, temperature and mood, translated into insights."/>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <canvas id="waveCanvas"></canvas>
+    <div class="hero-content">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAYAAACF..." 
+           alt="Omnia Logo" class="logo"/>  <!-- logo embedded (shortened base64) -->
+      <h1>Omnia</h1>
+      <h2>The AI that understands your rhythm</h2>
+      <p>Live in rhythm with your biology. Omnia translates your body’s signals into meaningful insights.</p>
+      <a href="#simulator" class="cta">Join for Free</a>
+    </div>
+  </header>
+
+  <section class="about">
+    <h3>AI that learns your rhythm</h3>
+    <p>Omnia’s explainable AI interprets heart rate variability, temperature and sleep to understand hormonal patterns – adapting insights uniquely to you.</p>
+  </section>
+
+  <section class="science">
+    <h3>Science that moves with you</h3>
+    <div class="cards">
+      <div class="card"><h4>💓 HRV</h4><p>Heart rhythm balance revealing stress and hormonal stability.</p></div>
+      <div class="card"><h4>🌡️ Temperature</h4><p>Subtle daily changes reflect your hormonal thermoregulation.</p></div>
+      <div class="card"><h4>😴 Sleep</h4><p>Your circadian rhythm’s mirror – stability, recovery, and energy.</p></div>
+    </div>
+  </section>
+
+  <section id="simulator" class="simulator">
+    <h3>AI Insight Simulator</h3>
+    <p>See how Omnia interprets your physiology across your cycle.</p>
+    <div class="slider-box">
+      <label for="dayRange">Day in Cycle: <span id="dayLabel">1</span></label>
+      <input type="range" id="dayRange" min="1" max="28" value="1" />
+    </div>
+    <canvas id="insightChart"></canvas>
+  </section>
+
+  <section class="cta-section">
+    <h3>Join the Omnia Pilot</h3>
+    <p>Be part of the AI-driven revolution in women’s health.</p>
+    <a href="#" class="cta large">Join for Free</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Omnia. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
