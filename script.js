@@ -82,3 +82,11 @@ dayRange.addEventListener('input',()=>{
   ]);
   chart.update();
 });
+
+// ---- Aurora parallax (very subtle) ----
+const aurora = document.querySelector('.aurora-bg');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY * 0.02; // adjust for more/less
+  aurora.style.transform = `translateY(${y}px)`;
+});
+
