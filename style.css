@@ -116,3 +116,62 @@ footer {
   .cards { flex-direction: column; align-items: center; }
   h1 { font-size: 2.2rem; }
 }
+
+/* ===== Aurora Gradient Mesh Background ===== */
+.aurora-bg {
+  position: fixed;
+  inset: -10vmax;            /* bleed beyond edges for parallax */
+  z-index: -2;               /* behind everything */
+  filter: blur(40px) saturate(120%);
+  pointer-events: none;
+}
+
+.aurora-bg .blob {
+  position: absolute;
+  width: 55vmax; height: 55vmax;
+  border-radius: 50%;
+  opacity: 0.35;
+  mix-blend-mode: multiply;  /* dreamy overlaps */
+  animation: floaty 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Colorways tuned to your lavender & deep purple identity */
+.aurora-bg .b1 { 
+  background: radial-gradient(circle at 30% 30%, #C689FF 0%, #EAD9FF 60%, transparent 70%);
+  top: -10%; left: -10%; animation-delay: 0s;
+}
+.aurora-bg .b2 { 
+  background: radial-gradient(circle at 70% 40%, #4B1C71 0%, #B18BD8 55%, transparent 70%);
+  top: 10%; right: -15%; animation-delay: 6s;
+  opacity: 0.28;
+}
+.aurora-bg .b3 { 
+  background: radial-gradient(circle at 40% 70%, #A455F1 0%, #E7CCFF 55%, transparent 70%);
+  bottom: -15%; left: 5%; animation-delay: 12s;
+}
+.aurora-bg .b4 { 
+  background: radial-gradient(circle at 60% 60%, #8B5CF6 0%, #D6BBFB 50%, transparent 70%);
+  bottom: -10%; right: -5%; animation-delay: 18s;
+  opacity: 0.25;
+}
+
+@keyframes floaty {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  25%  { transform: translate3d(5vmax, -4vmax, 0) scale(1.05); }
+  50%  { transform: translate3d(-3vmax, 3vmax, 0) scale(0.98); }
+  75%  { transform: translate3d(4vmax, 2vmax, 0) scale(1.03); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+/* Optional: subtle noise overlay for depth (super light) */
+body::after{
+  content:"";
+  position:fixed; inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(1500px 800px at 50% -10%, rgba(255,255,255,0.6), transparent 50%),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" opacity="0.05"><filter id="n"><feTurbulence baseFrequency="0.65" numOctaves="2" seed="3"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
+  background-size: cover, 300px 300px;
+}
